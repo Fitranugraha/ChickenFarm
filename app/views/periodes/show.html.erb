@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>No:</strong>
+  <%= @periode.no %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @periode.code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @periode.description %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @periode.start_date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @periode.end_date %>
+</p>
+
+<p>
+  <strong>Total do:</strong>
+  <%= @periode.total_do %>
+</p>
+
+<%= link_to 'Edit', edit_periode_path(@periode) %> |
+<%= link_to 'Back', periodes_path %>
