@@ -10,10 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008013615) do
+ActiveRecord::Schema.define(version: 20161008052858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "daily_reports", force: :cascade do |t|
+    t.date     "report_date"
+    t.integer  "age"
+    t.text     "remedy"
+    t.integer  "feed_recieved"
+    t.integer  "feed_actual"
+    t.integer  "feed_remains"
+    t.float    "average_weight"
+    t.integer  "mortality"
+    t.float    "average_temperature"
+    t.float    "average_hummidity"
+    t.string   "stockman"
+    t.text     "notes"
+    t.integer  "periode_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["periode_id"], name: "index_daily_reports_on_periode_id", using: :btree
+  end
+
+  create_table "henhouses", force: :cascade do |t|
+    t.string   "no"
+    t.string   "name"
+    t.text     "description"
+    t.integer  "capacity"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "periodes", force: :cascade do |t|
     t.string   "no"
@@ -24,6 +52,10 @@ ActiveRecord::Schema.define(version: 20161008013615) do
     t.integer  "total_do"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "henhouse_id"
+    t.index ["henhouse_id"], name: "index_periodes_on_henhouse_id", using: :btree
   end
 
+  add_foreign_key "daily_reports", "periodes"
+  add_foreign_key "periodes", "henhouses"
 end

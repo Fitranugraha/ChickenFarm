@@ -40,6 +40,14 @@
     <%= f.label :total_do %>
     <%= f.number_field :total_do %>
   </div>
+  
+
+	
+  <div class="field"> 
+    <%= f.label :henhouse_id %>
+	<%= collection_select(:periode, :henhouse_id, Henhouse.all, :id, :name) %>
+  </div>
+
 
   <div class="actions">
     <%= f.submit %>

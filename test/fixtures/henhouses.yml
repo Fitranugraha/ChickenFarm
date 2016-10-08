@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  'no': MyString
+  name: MyString
+  description: MyText
+  capacity: 1
+
+two:
+  'no': MyString
+  name: MyString
+  description: MyText
+  capacity: 1

@@ -1,0 +1,1 @@
+json.array! @henhouses, partial: 'henhouses/henhouse', as: :henhouse

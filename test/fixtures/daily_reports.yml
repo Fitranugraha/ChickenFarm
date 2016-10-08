@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  report_date: 2016-10-08
+  age: 1
+  remedy: MyText
+  feed_recieved: 1
+  feed_actual: 1
+  feed_remains: 1
+  average_weight: 1.5
+  mortality: 1
+  average_temperature: 
+  average_hummidity: 1.5
+  stockman: MyString
+  notes: MyText
+  periode: one
+
+two:
+  report_date: 2016-10-08
+  age: 1
+  remedy: MyText
+  feed_recieved: 1
+  feed_actual: 1
+  feed_remains: 1
+  average_weight: 1.5
+  mortality: 1
+  average_temperature: 
+  average_hummidity: 1.5
+  stockman: MyString
+  notes: MyText
+  periode: two

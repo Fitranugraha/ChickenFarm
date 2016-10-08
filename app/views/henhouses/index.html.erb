@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Henhouses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Capacity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @henhouses.each do |henhouse| %>
+      <tr>
+        <td><%= henhouse.no %></td>
+        <td><%= henhouse.name %></td>
+        <td><%= henhouse.description %></td>
+        <td><%= henhouse.capacity %></td>
+        <td><%= link_to 'Show', henhouse %></td>
+        <td><%= link_to 'Edit', edit_henhouse_path(henhouse) %></td>
+        <td><%= link_to 'Destroy', henhouse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Henhouse', new_henhouse_path %>

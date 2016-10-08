@@ -1,0 +1,82 @@
+<%= form_for(daily_report) do |f| %>
+  <% if daily_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(daily_report.errors.count, "error") %> prohibited this daily_report from being saved:</h2>
+
+      <ul>
+      <% daily_report.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :report_date %>
+    <%= f.date_select :report_date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= f.label :remedy %>
+    <%= f.text_area :remedy %>
+  </div>
+
+  <div class="field">
+    <%= f.label :feed_recieved %>
+    <%= f.number_field :feed_recieved %>
+  </div>
+
+  <div class="field">
+    <%= f.label :feed_actual %>
+    <%= f.number_field :feed_actual %>
+  </div>
+
+  <div class="field">
+    <%= f.label :feed_remains %>
+    <%= f.number_field :feed_remains %>
+  </div>
+
+  <div class="field">
+    <%= f.label :average_weight %>
+    <%= f.text_field :average_weight %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mortality %>
+    <%= f.number_field :mortality %>
+  </div>
+
+  <div class="field">
+    <%= f.label :average_temperature %>
+    <%= f.text_field :average_temperature %>
+  </div>
+
+  <div class="field">
+    <%= f.label :average_hummidity %>
+    <%= f.text_field :average_hummidity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :stockman %>
+    <%= f.text_field :stockman %>
+  </div>
+
+  <div class="field">
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+  </div>
+
+  <div class="field">
+    <%= f.label :periode_id %>
+    <%= f.text_field :periode_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -11,6 +11,7 @@
       <th>Start date</th>
       <th>End date</th>
       <th>Total do</th>
+	        <th>Henhouse</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,6 +25,8 @@
         <td><%= periode.start_date %></td>
         <td><%= periode.end_date %></td>
         <td><%= periode.total_do %></td>
+		<td><%= periode.henhouse.name unless periode.henhouse.blank? %></td>
+		
         <td><%= link_to 'Show', periode %></td>
         <td><%= link_to 'Edit', edit_periode_path(periode) %></td>
         <td><%= link_to 'Destroy', periode, method: :delete, data: { confirm: 'Are you sure?' } %></td>
