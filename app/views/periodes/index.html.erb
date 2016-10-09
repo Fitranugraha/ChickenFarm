@@ -2,16 +2,17 @@
 
 <h1>Periodes</h1>
 
-<table>
+
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>No</th>
-      <th>Code</th>
-      <th>Description</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Total do</th>
-	        <th>Henhouse</th>
+      <th>Kode</th>
+      <th>Deskripsi</th>
+	  <th>Status</th>
+      <th>Mulai</th>
+      <th>Selesai</th>
+      <th>Jumlah DO</th>
+	  <th>Kandang</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,9 +20,9 @@
   <tbody>
     <% @periodes.each do |periode| %>
       <tr>
-        <td><%= periode.no %></td>
         <td><%= periode.code %></td>
         <td><%= periode.description %></td>
+		<td><%= periode.status %></td>
         <td><%= periode.start_date %></td>
         <td><%= periode.end_date %></td>
         <td><%= periode.total_do %></td>

@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161008052858) do
+ActiveRecord::Schema.define(version: 20161009051640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "daily_reports", force: :cascade do |t|
+  create_table "daily_records", force: :cascade do |t|
     t.date     "report_date"
     t.integer  "age"
     t.text     "remedy"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20161008052858) do
     t.integer  "periode_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-    t.index ["periode_id"], name: "index_daily_reports_on_periode_id", using: :btree
+    t.index ["periode_id"], name: "index_daily_records_on_periode_id", using: :btree
   end
 
   create_table "henhouses", force: :cascade do |t|
@@ -53,9 +53,20 @@ ActiveRecord::Schema.define(version: 20161008052858) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "henhouse_id"
+    t.string   "status"
     t.index ["henhouse_id"], name: "index_periodes_on_henhouse_id", using: :btree
   end
 
-  add_foreign_key "daily_reports", "periodes"
+  create_table "standards", force: :cascade do |t|
+    t.integer  "age_day"
+    t.float    "avg_bw"
+    t.float    "percent_mort"
+    t.float    "fcr"
+    t.integer  "std_eef"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_foreign_key "daily_records", "periodes"
   add_foreign_key "periodes", "henhouses"
 end

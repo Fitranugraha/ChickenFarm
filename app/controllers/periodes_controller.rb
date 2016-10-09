@@ -10,6 +10,7 @@ class PeriodesController < ApplicationController
   # GET /periodes/1
   # GET /periodes/1.json
   def show
+    @daily_records = DailyRecord.all.order(:report_date)
   end
 
   # GET /periodes/new
@@ -19,6 +20,7 @@ class PeriodesController < ApplicationController
 
   # GET /periodes/1/edit
   def edit
+
   end
 
   # POST /periodes
@@ -69,6 +71,8 @@ class PeriodesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def periode_params
-      params.require(:periode).permit(:no, :code, :description, :start_date, :end_date, :total_do, :henhouse_id)
+      params.require(:periode).permit(:no, :code, :status, :description, :start_date, :end_date, :total_do, :henhouse_id, daily_records_attributes: [:id, :report_date, :feed_actual, :average_weight, :mortality, :average_temperature, :average_hummidity, :notes, :stockman, :_destroy])
     end
 end
+
+

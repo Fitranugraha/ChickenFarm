@@ -1,48 +1,48 @@
 require 'test_helper'
 
-class DailyReportsControllerTest < ActionDispatch::IntegrationTest
+class DailyrecordsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @daily_report = daily_reports(:one)
+    @daily_record = daily_records(:one)
   end
 
   test "should get index" do
-    get daily_reports_url
+    get daily_records_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_daily_report_url
+    get new_daily_record_url
     assert_response :success
   end
 
-  test "should create daily_report" do
-    assert_difference('DailyReport.count') do
-      post daily_reports_url, params: { daily_report: { age: @daily_report.age, average_hummidity: @daily_report.average_hummidity, average_temperature: @daily_report.average_temperature, average_weight: @daily_report.average_weight, feed_actual: @daily_report.feed_actual, feed_recieved: @daily_report.feed_recieved, feed_remains: @daily_report.feed_remains, mortality: @daily_report.mortality, notes: @daily_report.notes, periode_id: @daily_report.periode_id, remedy: @daily_report.remedy, report_date: @daily_report.report_date, stockman: @daily_report.stockman } }
+  test "should create daily_record" do
+    assert_difference('Dailyrecord.count') do
+      post daily_records_url, params: { daily_record: { age: @daily_record.age, average_hummidity: @daily_record.average_hummidity, average_temperature: @daily_record.average_temperature, average_weight: @daily_record.average_weight, feed_actual: @daily_record.feed_actual, feed_recieved: @daily_record.feed_recieved, feed_remains: @daily_record.feed_remains, mortality: @daily_record.mortality, notes: @daily_record.notes, periode_id: @daily_record.periode_id, remedy: @daily_record.remedy, record_date: @daily_record.record_date, stockman: @daily_record.stockman } }
     end
 
-    assert_redirected_to daily_report_url(DailyReport.last)
+    assert_redirected_to daily_record_url(Dailyrecord.last)
   end
 
-  test "should show daily_report" do
-    get daily_report_url(@daily_report)
+  test "should show daily_record" do
+    get daily_record_url(@daily_record)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_daily_report_url(@daily_report)
+    get edit_daily_record_url(@daily_record)
     assert_response :success
   end
 
-  test "should update daily_report" do
-    patch daily_report_url(@daily_report), params: { daily_report: { age: @daily_report.age, average_hummidity: @daily_report.average_hummidity, average_temperature: @daily_report.average_temperature, average_weight: @daily_report.average_weight, feed_actual: @daily_report.feed_actual, feed_recieved: @daily_report.feed_recieved, feed_remains: @daily_report.feed_remains, mortality: @daily_report.mortality, notes: @daily_report.notes, periode_id: @daily_report.periode_id, remedy: @daily_report.remedy, report_date: @daily_report.report_date, stockman: @daily_report.stockman } }
-    assert_redirected_to daily_report_url(@daily_report)
+  test "should update daily_record" do
+    patch daily_record_url(@daily_record), params: { daily_record: { age: @daily_record.age, average_hummidity: @daily_record.average_hummidity, average_temperature: @daily_record.average_temperature, average_weight: @daily_record.average_weight, feed_actual: @daily_record.feed_actual, feed_recieved: @daily_record.feed_recieved, feed_remains: @daily_record.feed_remains, mortality: @daily_record.mortality, notes: @daily_record.notes, periode_id: @daily_record.periode_id, remedy: @daily_record.remedy, record_date: @daily_record.record_date, stockman: @daily_record.stockman } }
+    assert_redirected_to daily_record_url(@daily_record)
   end
 
-  test "should destroy daily_report" do
-    assert_difference('DailyReport.count', -1) do
-      delete daily_report_url(@daily_report)
+  test "should destroy daily_record" do
+    assert_difference('Dailyrecord.count', -1) do
+      delete daily_record_url(@daily_record)
     end
 
-    assert_redirected_to daily_reports_url
+    assert_redirected_to daily_records_url
   end
 end

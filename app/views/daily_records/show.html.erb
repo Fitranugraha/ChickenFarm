@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>report date:</strong>
+  <%= @daily_record.report_date %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @daily_record.age %>
+</p>
+
+<p>
+  <strong>Remedy:</strong>
+  <%= @daily_record.remedy %>
+</p>
+
+<p>
+  <strong>Feed recieved:</strong>
+  <%= @daily_record.feed_recieved %>
+</p>
+
+<p>
+  <strong>Feed actual:</strong>
+  <%= @daily_record.feed_actual %>
+</p>
+
+<p>
+  <strong>Feed remains:</strong>
+  <%= @daily_record.feed_remains %>
+</p>
+
+<p>
+  <strong>Average weight:</strong>
+  <%= @daily_record.average_weight %>
+</p>
+
+<p>
+  <strong>Mortality:</strong>
+  <%= @daily_record.mortality %>
+</p>
+
+<p>
+  <strong>Average temperature:</strong>
+  <%= @daily_record.average_temperature %>
+</p>
+
+<p>
+  <strong>Average hummidity:</strong>
+  <%= @daily_record.average_hummidity %>
+</p>
+
+<p>
+  <strong>Stockman:</strong>
+  <%= @daily_record.stockman %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @daily_record.notes %>
+</p>
+
+<p>
+  <strong>Periode:</strong>
+  <%= @daily_record.periode %>
+</p>
+
+<%= link_to 'Edit', edit_daily_record_path(@daily_record) %> |
+<%= link_to 'Back', daily_records_path %>

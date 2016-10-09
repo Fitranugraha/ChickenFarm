@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class DailyrecordTest < ActiveSupport::TestCase
+class StandardTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  age_day: 1
+  avg_bw: 1.5
+  percent_mort: 1.5
+  fcr: 1.5
+  std_eef: 1
+
+two:
+  age_day: 1
+  avg_bw: 1.5
+  percent_mort: 1.5
+  fcr: 1.5
+  std_eef: 1

@@ -11,32 +11,41 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :no %>
-    <%= f.text_field :no %>
+
+  <div class="form-group">
+    <label for="formGroupExampleInput">Example label</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
   </div>
 
-  <div class="field">
+   <div class="form-group">
     <%= f.label :code %>
     <%= f.text_field :code %>
   </div>
+  
+ 
+  
+  <div class="form-group">
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+  </div>
 
-  <div class="field">
+
+  <div class="form-group">
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :start_date %>
     <%= f.date_select :start_date %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :end_date %>
     <%= f.date_select :end_date %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :total_do %>
     <%= f.number_field :total_do %>
   </div>
@@ -49,7 +58,29 @@
   </div>
 
 
+<h3>Daily Record</h3>
+<table>
+	<th>Tanggal</th>
+	<th>Umur </br> (Hari)</th>
+	<th>Pemberian Pakan </br> (Bag)</th>
+	<th>Berat Rata-Rata </br> (kg)</th>
+	<th>Mati </br> (ekor)</th>
+	<th>Temperatur </th>
+	<th>Kelembaban</th>
+	<th>Catatan</th>
+	<th>Pekerja</th>
+	<tbody>
+<%= f.fields_for :daily_records, f.object.daily_records.order(:report_date) do | record | %>
+	<%= render 'daily_record_fields', f: record %>
+<% end %>
+</tbody>
+</table>
+
+<%= link_to_add_fields "add Daily Records", f, :daily_records %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Age day:</strong>
+  <%= @standard.age_day %>
+</p>
+
+<p>
+  <strong>Avg bw:</strong>
+  <%= @standard.avg_bw %>
+</p>
+
+<p>
+  <strong>Percent mort:</strong>
+  <%= @standard.percent_mort %>
+</p>
+
+<p>
+  <strong>Fcr:</strong>
+  <%= @standard.fcr %>
+</p>
+
+<p>
+  <strong>Std eef:</strong>
+  <%= @standard.std_eef %>
+</p>
+
+<%= link_to 'Edit', edit_standard_path(@standard) %> |
+<%= link_to 'Back', standards_path %>

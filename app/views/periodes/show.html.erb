@@ -1,13 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>No:</strong>
-  <%= @periode.no %>
-</p>
 
 <p>
   <strong>Code:</strong>
   <%= @periode.code %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @periode.status %>
 </p>
 
 <p>
@@ -30,5 +31,42 @@
   <%= @periode.total_do %>
 </p>
 
+<p>
+	<strong>Daily Record </strong>
+	
+	<table class="table table-striped">
+		<thead>
+		<th>Date</th>
+		<th scope="row">Age </br> Day(s)</th>
+		<th>Feeding </br>(Bag)</th>
+		<th>Average </br> Weight</th>
+		<th>Mortality</th>
+		<th>Average </br>Temperature</th>
+		<th>Average </br>Hummidity</th>
+		<th>Notes</th>
+		<th>Stockman</th>
+
+	</thead>
+	<tbody>
+	<% @periode.daily_records.each do |record| %>
+	<tr>
+		<td><%= record.report_date%></td>	
+		<th scope="row"><%= record.calculate_age %></td>
+		<td><%= record.feed_actual%></td>
+		<td><%= record.average_weight%>	</td>
+		<td><%= record.mortality %>	</td>
+		<td><%= record.average_temperature %>	</td>
+		<td><%= record.average_hummidity %>	</td>
+		<td><%= record.notes %>	</td>
+		<td><%= record.stockman %>	</td>
+	</tr>	
+	<% end %>
+</tbody>
+</table>
+</p>
+
 <%= link_to 'Edit', edit_periode_path(@periode) %> |
 <%= link_to 'Back', periodes_path %>
+
+
+

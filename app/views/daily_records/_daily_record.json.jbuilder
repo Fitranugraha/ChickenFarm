@@ -1,0 +1,2 @@
+json.extract! daily_record, :id, :record_date, :age, :remedy, :feed_recieved, :feed_actual, :feed_remains, :average_weight, :mortality, :average_temperature, :average_hummidity, :stockman, :notes, :periode_id, :created_at, :updated_at
+json.url daily_record_url(daily_record, format: :json)
